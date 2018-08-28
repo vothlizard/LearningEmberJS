@@ -1,0 +1,13 @@
+<div class="ui grid form">
+  <div class="sixteen wide column">
+    <form {{action 'save' model on='submit'}} >
+      <div class="ui segment">
+        {{address-form model=model}}
+      </div>
+      <button type="submit" class="ui primary button">Add address</button>
+      {{#link-to 'addresses' }}
+        <button class="ui button secondary"><i class="icon chevron left"></i>Go Back</button>
+      {{/link-to}}
+    </form>
+  </div>
+</div>

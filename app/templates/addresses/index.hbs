@@ -1,0 +1,32 @@
+<div class="ui segment">
+    <table class="ui table">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Coutnry</th>
+        </thead>
+        <tbody>
+            {{#each model as |address|}}
+            <tr>
+                <td> {{#link-to 'addresses.edit' address.id}} {{address.firstName}} {{/link-to}}
+                </td>
+                <td>{{address.lastName}}</td>
+                <td>{{address.street}}</td>
+                <td>{{address.city}}</td>
+                <td>{{address.country}}</td>
+                <td>
+
+                    {{#link-to 'addresses.delete' address.id}}
+                    <i class="icon trash"></i>
+                    {{/link-to}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#link-to 'addresses.new'}}
+    <button class="ui primary button">New address</button>
+    {{/link-to}}
+</div>
